@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {
 #endif
 
     // dirs & clean
-    auto wd = QDir(QApplication::applicationDirPath());
+    auto wd = QDir("../ncc");
     if (NekoGui::dataStore->flag_use_appdata) {
         QApplication::setApplicationName("nekoray");
         if (!NekoGui::dataStore->appdataDir.isEmpty()) {

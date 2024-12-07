@@ -1049,7 +1049,7 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id) {
 
         // C1: Address+Port
         f = f0->clone();
-        f->setText(profile->bean->DisplayAddress());
+        //f->setText(profile->bean->DisplayAddress());
         if (isRunning) f->setForeground(palette().link());
         ui->proxyListTable->setItem(row, 1, f);
 
@@ -1080,6 +1080,7 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id) {
 // table菜单相关
 
 void MainWindow::on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item) {
+    /*
     auto id = item->data(114514).toInt();
     if (select_mode) {
         emit profile_selected(id);
@@ -1089,6 +1090,7 @@ void MainWindow::on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item) {
     }
     auto dialog = new DialogEditProfile("", id, this);
     connect(dialog, &QDialog::finished, dialog, &QDialog::deleteLater);
+    */
 }
 
 void MainWindow::on_menu_add_from_input_triggered() {
