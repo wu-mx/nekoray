@@ -178,16 +178,6 @@ jobs:
           mv windows64 nekoray
           zip -r $version_standalone-windows64.zip nekoray
           rm -rf nekoray
-      - name: Pack Debian
-        run: |
-          source libs/env_deploy.sh
-          find . -name artifacts.tgz | xargs -n1 tar xvzf
-          cd deployment
-          cp -r public_res/* linux64
-          ####
-          bash ../libs/package_debian.sh ${{ github.event.inputs.tag }}
-          mv nekoray.deb $version_standalone-debian-x64.deb
-          sudo rm -rf nekoray
       - name: Pack AppImage
         run: |
           source libs/env_deploy.sh
